@@ -1,0 +1,22 @@
+import spacy
+
+def load_ner_model(model_name: str = "en_core_web_sm"):
+    """
+    Loads a spaCy Named Entity Recognition (NER) model.
+    
+    Parameters:
+    - model_name: str, the name of the spaCy model to load. Default is "en_core_web_sm".
+    
+    Returns:
+    - nlp: A loaded spaCy language model.
+    """
+    try:
+        nlp = spacy.load(model_name)
+        print(f"Successfully loaded spaCy model '{model_name}'")
+    except Exception as e:
+        print(f"An error occurred while loading the spaCy model '{model_name}': {e}")
+        nlp = None
+    return nlp
+
+# Example usage
+ner_model = load_ner_model()

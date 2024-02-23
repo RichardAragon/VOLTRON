@@ -1,0 +1,25 @@
+def process_query(user_query: str):
+    model = load_llm_model()
+    intent, keywords = analyze_query(user_query, model)
+    
+    # Load the NER model
+    ner_model = load_ner_model()
+    
+    # Apply NER model to the query to extract entities
+    doc = ner_model(user_query)
+    entities = [(ent.text, ent.label_) for ent in doc.ents]
+    
+    # Map keywords to SQL
+    keyword_map = {
+        "customer": ("customers", "customer_id", "name"),
+        # Add more mappings as needed
+    }
+    sql_mapping = map_keywords_to_sql(keywords, keyword_map)
+    
+    # Generate the SQL query, now using the enhanced entity extraction
+    query_templates = {
+        "basic_select": "SELECT {columns} FROM {table} WHERE {conditions}",
+        # Add more templates as necessary
+    }
+    draft_query = build_query(intent, sql_mapping, query_templates, user_query, entities, doc)
+    visualize_draft_query(draft_query)

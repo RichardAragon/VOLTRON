@@ -1,4 +1,6 @@
 # VOLTRON: Very Obvious Language TRanslator, Obviating Need for SQL expertise
+![Uploading DALL·E 2024-02-23 14.38.09 - Envision a scene where a magnificent robot lion, named VOLTRON, is formed from five individual lions, each a distinct color. At the forefront, a red l.jpeg…]()
+
 A fusion of Neural Networks and Rules Based functions for database retrieval and API functions
 
 Natural Language to SQL Translator

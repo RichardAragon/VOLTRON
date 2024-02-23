@@ -1,4 +1,4 @@
-# VOLTRON
+# VOLTRON Very Obvious Language TRanslator, Obviating Need for SQL expertise
 A fusion of Neural Networks and Rules Based functions for database retrieval and API functions
 
 Natural Language to SQL Translator

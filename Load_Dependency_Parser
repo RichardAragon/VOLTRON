@@ -1,0 +1,23 @@
+import spacy
+
+def load_dependency_parser(model_name: str = "en_core_web_sm"):
+    """
+    Loads a spaCy model with dependency parsing capabilities.
+    
+    Parameters:
+    - model_name: str, the name of the spaCy model to load. Default is "en_core_web_sm",
+                  which is a small English model that includes dependency parsing.
+    
+    Returns:
+    - nlp: A loaded spaCy language model with dependency parsing.
+    """
+    try:
+        nlp = spacy.load(model_name)
+        print(f"spaCy model '{model_name}' loaded successfully.")
+    except Exception as e:
+        print(f"Error loading spaCy model '{model_name}': {e}")
+        nlp = None
+    return nlp
+
+# Example usage
+dependency_parser = load_dependency_parser()
